@@ -1,0 +1,8 @@
+twig:
+    file_name_pattern: '*.twig'
+    globals:
+        menuItems: '@App\Service\AdminService'
+
+when@test:
+    twig:
+        strict_variables: true
