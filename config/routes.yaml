@@ -70,3 +70,7 @@ user_delete:
     path: /user/delete/{id}
     controller: App\Controller\UserController::delete
     methods: [GET,DELETE]
+
+dashboard:
+    path: /dashboard
+    controller: App\Controller\DashboardController::index

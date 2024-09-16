@@ -9,16 +9,17 @@
                 <h2 class="fw-bolder">Add User</h2>
                 <!--end::Modal title-->
                 <!--begin::Close-->
-                <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
-                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
-                    <span class="svg-icon svg-icon-1">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                        <rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
-                                                        <rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
-                                                    </svg>
-                                                </span>
-                    <!--end::Svg Icon-->
+                    <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
+                        <!--begin::Svg Icon | path: icons/duotune/arrows/arr061.svg-->
+                        <span class="svg-icon svg-icon-1">
+																	<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+																		<rect opacity="0.5" x="6" y="17.3137" width="16" height="2" rx="1" transform="rotate(-45 6 17.3137)" fill="black" />
+																		<rect x="7.41422" y="6" width="16" height="2" rx="1" transform="rotate(45 7.41422 6)" fill="black" />
+																	</svg>
+																</span>
+                        <!--end::Svg Icon-->
                 </div>
+
                 <!--end::Close-->
             </div>
             <!--end::Modal header-->
@@ -68,18 +69,26 @@
                         <!--begin::Input group-->
                         <div class="fv-row mb-7">
                             <!--begin::Label-->
-                            <label class="required fw-bold fs-6 mb-2">Full Name</label>
+                            <label class="required fw-bold fs-6 mb-2">Ad</label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <input type="text" name="username" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Full name" value="" />
+                            <input type="text" name="username" class="form-control form-control-solid mb-3 mb-lg-0" placeholder=" Name" value="" />
+                            <!--end::Input-->
+                        </div>,
+                        <div class="fv-row mb-7">
+                            <!--begin::Label-->
+                            <label class="required fw-bold fs-6 mb-2">Soyad</label>
+                            <!--end::Label-->
+                            <!--begin::Input-->
+                            <input type="text" name="surname" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="Surname" value="" />
                             <!--end::Input-->
                         </div>
                         <div class="fv-row mb-7">
                             <!--begin::Label-->
-                            <label class="required fw-bold fs-6 mb-2">Password</label>
+                            <label class="required fw-bold fs-6 mb-2">Şifre</label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <input type="text" name="password" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="password" value="" />
+                            <input type="password" name="password" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="password" value="" />
                             <!--end::Input-->
                         </div>
                         <!--end::Input group-->
@@ -89,7 +98,7 @@
                             <label class="required fw-bold fs-6 mb-2">Email</label>
                             <!--end::Label-->
                             <!--begin::Input-->
-                            <input type="email" name="user_email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="example@domain.com" value="" />
+                            <input type="email" name="user_email" class="form-control form-control-solid mb-3 mb-lg-0" placeholder="example@mail.com" value="" />
                             <!--end::Input-->
                         </div>
                         <!--end::Input group-->
@@ -108,8 +117,14 @@
                                     <!--end::Input-->
                                     <!--begin::Label-->
                                     <label class="form-check-label" for="kt_modal_update_role_option_0">
-                                        <div class="fw-bolder text-gray-800">Administrator</div>
-                                        <div class="text-gray-600">Best for business owners and company administrators</div>
+                                        <div class="fw-bolder text-gray-800">User</div>
+                                    </label>
+
+                                    <input class="form-check-input me-3" name="user_role" type="radio" value="" id="kt_modal_update_role_option_0"  />
+                                    <!--end::Input-->
+                                    <!--begin::Label-->
+                                    <label class="form-check-label" for="kt_modal_update_role_option_0">
+                                        <div class="fw-bolder text-gray-800">Admin</div>
                                     </label>
                                     <!--end::Label-->
                                 </div>
@@ -119,11 +134,11 @@
                         <!--end::Scroll-->
                         <!--begin::Actions-->
                         <div class="text-center pt-15">
-                            <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Discard</button>
-                            <button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
-                                <span class="indicator-label">Submit</span>
-                                <span class="indicator-progress">Please wait...
-                                                        <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                            <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Sıfırla</button>
+                            <button type="submit" data-kt-users-modal-action="submit">
+                                <span class="indicator-label">Kaydet</span>
+                                <span class="indicator-progress">Lütfen Bekleyiniz...
+                                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                             </button>
                         </div>
                     </div>

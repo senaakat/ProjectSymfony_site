@@ -1,8 +1,23 @@
 {% extends 'base.html.twig' %}
-{% block content %}
 
-<div style="padding: 4% 0 0 10%;">
-    <!--begin::Card-->
+{% block toolbar %}
+    <div class="toolbar" id="kt_toolbar">
+        <!--begin::Container-->
+        <div id="kt_toolbar_container" class="container-fluid d-flex flex-stack">
+            <!--begin::Page title-->
+            <div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
+                <!--begin::Title-->
+                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Kullanıcılar</h1>
+                <!--end::Title-->
+            </div>
+            <!--end::Page title-->
+
+        </div>
+        <!--end::Container-->
+    </div>
+{% endblock %}
+{% block content %}
+      <!--begin::Card-->
     <div class="card">
         <!--begin::Card header-->
         <div class="card-header border-0 pt-6">
@@ -69,7 +84,6 @@
                     <th class="min-w-125px">User</th>
                     <th class="min-w-125px">Role</th>
                     <th class="min-w-125px">Last login</th>
-                    <th class="min-w-125px">Two-step</th>
                     <th class="min-w-125px">Joined Date</th>
                     <th class="text-end min-w-100px">Actions</th>
                 </tr>
@@ -101,7 +115,7 @@
                         <!--end::Avatar-->
                         <!--begin::User details-->
                         <div class="d-flex flex-column">
-                            <a href="#" class="text-gray-800 text-hover-primary mb-1">{{ user.username }}</a>
+                            <a href="#" class="text-gray-800 text-hover-primary mb-1">{{ user.username}} {{user.surname }}</a>
                             <span>{{ user.email }}</span>
                         </div>
                         <!--begin::User details-->
@@ -115,9 +129,6 @@
                         <div class="badge badge-light fw-bolder">Yesterday</div>
                     </td>
                     <!--end::Last login=-->
-                    <!--begin::Two step=-->
-                    <td></td>
-                    <!--end::Two step=-->
                     <!--begin::Joined-->
                     <td>{{ user.createdAt|date('Y-m-d') }}<br>
                         {{ user.createdAt|date('H:i:s') }}</td>
@@ -137,7 +148,8 @@
                         <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-bold fs-7 w-125px py-4" data-kt-menu="true">
                             <!--begin::Menu item-->
                             <div class="menu-item px-3">
-                                <a href="{{ path('user_edit',{id:user.id}) }}" class="menu-link px-3">Edit</a>
+                                <a href="{{ path('user_edit',{id:user.id}) }}" class="menu-link px-3" >Edit</a>
+                                {% include 'pages/user/edit.html.twig' %}
                             </div>
                             <!--end::Menu item-->
                             <!--begin::Menu item-->
@@ -158,5 +170,35 @@
         </div>
         <!--end::Card body-->
     </div>
-</div>  <!--end::Card-->
+ {% endblock %}
+{% block javascripts %}
+    <script>var hostUrl = "assets/";</script>
+    <!--begin::Global Javascript Bundle(used by all pages)-->
+    <script src="{{ asset('assets/plugins/global/plugins.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/scripts.bundle.js') }}"></script>
+    <!--end::Global Javascript Bundle-->
+    <!--begin::Page Vendors Javascript(used by this page)-->
+    <script src="{{ asset('assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
+    <!--end::Page Vendors Javascript-->
+    <!--begin::Page Custom Javascript(used by this page)-->
+    <script src="{{ asset('assets/js/custom/apps/user-management/users/list/table.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/apps/user-management/users/list/export-users.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/apps/user-management/users/list/add.js') }}"></script>
+    <script src="{{ asset('assets/js/widgets.bundle.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/widgets.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/apps/chat/chat.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/utilities/modals/upgrade-plan.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/utilities/modals/create-app.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/utilities/modals/users-search.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/apps/user-management/users/view/view.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/apps/user-management/users/view/update-details.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/apps/user-management/users/view/add-schedule.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/apps/user-management/users/view/add-task.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/apps/user-management/users/view/update-email.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/apps/user-management/users/view/update-password.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/apps/user-management/users/view/update-role.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/apps/user-management/users/view/add-auth-app.js') }}"></script>
+    <script src="{{ asset('assets/js/custom/apps/user-management/users/view/add-one-time-password.js') }}"></script>
+    <!--end::Page Custom Javascript-->
+    <!--end::Javascript-->
 {% endblock %}
